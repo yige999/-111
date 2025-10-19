@@ -31,13 +31,7 @@
     "NEXT_PUBLIC_SUPABASE_URL": "@next-public-supabase-url",
     "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next-public-supabase-anon-key"
   },
-  "functions": {
-    "backend/main.py": {
-      "runtime": "python3.9",
-      "maxDuration": 30
-    }
-  },
-  "installCommand": "cd frontend && npm install",
+    "installCommand": "cd frontend && npm install",
   "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/.next",
   "framework": "nextjs"

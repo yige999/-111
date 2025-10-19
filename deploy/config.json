@@ -1,0 +1,54 @@
+{
+  "production": {
+    "backend_url": "https://autosaas-radar.vercel.app/api",
+    "frontend_url": "https://autosaas-radar.vercel.app",
+    "use_docker": false,
+    "use_vercel": true,
+    "use_systemd": false,
+    "run_tests": true,
+    "process_manager": "pm2",
+    "frontend_env": {
+      "NEXT_PUBLIC_API_URL": "https://autosaas-radar.vercel.app/api",
+      "NEXT_PUBLIC_ENV": "production"
+    },
+    "database": {
+      "type": "postgresql",
+      "host": "your-project.supabase.co",
+      "port": 5432,
+      "username": "postgres",
+      "database": "postgres",
+      "connection_pool_size": 10
+    },
+    "monitoring": {
+      "enable_health_checks": true,
+      "log_level": "INFO",
+      "alert_webhook": null
+    }
+  },
+  "staging": {
+    "backend_url": "https://staging-autosaas-radar.vercel.app/api",
+    "frontend_url": "https://staging-autosaas-radar.vercel.app",
+    "use_docker": false,
+    "use_vercel": true,
+    "use_systemd": false,
+    "run_tests": true,
+    "process_manager": "pm2",
+    "frontend_env": {
+      "NEXT_PUBLIC_API_URL": "https://staging-autosaas-radar.vercel.app/api",
+      "NEXT_PUBLIC_ENV": "staging"
+    },
+    "database": {
+      "type": "postgresql",
+      "host": "staging-project.supabase.co",
+      "port": 5432,
+      "username": "postgres",
+      "database": "postgres",
+      "connection_pool_size": 5
+    },
+    "monitoring": {
+      "enable_health_checks": true,
+      "log_level": "DEBUG",
+      "alert_webhook": null
+    }
+  }
+}

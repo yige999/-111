@@ -1,0 +1,36 @@
+{
+  "deployment": {
+    "frontend": {
+      "platform": "vercel",
+      "buildCommand": "cd frontend && npm run build",
+      "outputDirectory": "frontend/.next",
+      "nodeVersion": "18.x"
+    },
+    "backend": {
+      "platform": "railway",
+      "startCommand": "cd backend && python main.py",
+      "pythonVersion": "3.9"
+    },
+    "database": {
+      "platform": "supabase",
+      "url": "${SUPABASE_URL}",
+      "connectionPooling": true
+    }
+  },
+  "environment": {
+    "production": {
+      "NODE_ENV": "production",
+      "LOG_LEVEL": "info"
+    },
+    "development": {
+      "NODE_ENV": "development",
+      "LOG_LEVEL": "debug"
+    }
+  },
+  "automation": {
+    "schedule": "0 9 * * *",
+    "timezone": "UTC",
+    "retryAttempts": 3,
+    "timeout": 300
+  }
+}
